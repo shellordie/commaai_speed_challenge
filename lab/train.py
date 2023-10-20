@@ -39,15 +39,19 @@ def train(numdata,model_name,epochs):
     model=_load_model(model,model_name)
     model.summary()
     model.fit(x_train,y_train,epochs=epochs,batch_size=32)
-    test_loss,test_acc=model.evaluate(x_test,y_test,verbose=2)
+    test_mse,test_mae=model.evaluate(x_test,y_test,verbose=2)
     f=open("acc.txt","r")
-    last_acc=f.readline()
-    print("\n Last Mean average error:",last_acc)
-    print("\n Current Mean average error:",test_acc)
+    lines=f.readlines()
+    last_mae=lines[0].strip()
+    last_mse=lines[1].strip()
+    print("\n Last Mean average error:",last_mae,"last mse loss",last_mse)
+    print("\n Current Mean average error:",test_mae)
     user_input=input("do you want to save this model ? y/n :")
     if user_input=="y":
         f=open("acc.txt","w")
-        f.write(str(test_acc))
+        f.write(str(test_mae))
+        f.write("\n")
+        f.write(str(test_mse))
         f.close()
         _save_model(model,model_name)
     else:
@@ -56,5 +60,5 @@ def train(numdata,model_name,epochs):
 print("Num GPU availaible :",len(tf.config.list_physical_devices('GPU')))
 numdata=groundtruth2D_data
 model_name=model_name
-train(numdata,model_name,epochs=5)
+train(numdata,model_name,epochs=1)
 

@@ -18,7 +18,7 @@ def test(model_name,numdata):
     model.summary()
     x_test=Load(numdata,"x_test")
     y_test=Load(numdata,"y_test")
-    for i in range(20,30): 
+    for i in range(30,40): 
         print("----------------------------------------------")
         print("real speed",y_test[i])
         predictions=model.predict(np.array([x_test[i]]))

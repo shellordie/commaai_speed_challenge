@@ -37,17 +37,19 @@ def _fire(y,filters,name):
     y=_expand(y,filters)
     return y
 
-data_augmentation=tf.keras.Sequential([
+data_aug=tf.keras.Sequential([
     layers.RandomFlip("horizontal_and_vertical"),
     layers.RandomRotation(0.2),
+    layers.Resizing(199,199),
+    layers.Rescaling(1./255),
     ])
-    
+
 base_model=MobileNetV2(include_top=False)
 base_model.trainable=False
 
 def Pilot_net(input_shape):
     inputs=Input(shape=input_shape)
-    y=data_augmentation(inputs)
+    y=data_aug(inputs)
     y=base_model(y,training=False)
     #y=Conv2D(filters=96,kernel_size=7,strides=2)(y)
     #y=_fire(y,filters=128,name="fire2")
