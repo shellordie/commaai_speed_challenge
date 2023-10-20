@@ -51,19 +51,21 @@ def data_loader():
     print("saved in the groundtruth")
     return X,y
 
-def data_split_save(X,y,data_name):
+def data_split_save(data_name):
     """ the preprocessor """
-    x_train,x_test,y_train,y_test=Split2D(X,y)
-    x_train=Normalize2D(x_train)
-    x_test=Normalize2D(x_test)
+    ground_x=Load("groundtruth2D","ground_X")
+    ground_y=Load("groundtruth2D","ground_y")
+    x_train,x_test,y_train,y_test=Split2D(ground_x,ground_y)
+    #x_train=Normalize2D(x_train)
+    #x_test=Normalize2D(x_test)
     _save(data_name,x_train,x_test,y_train,y_test)
-    _dataset_info(X,y,"x","y")
+    _dataset_info(ground_x,ground_y,"x","y")
     _dataset_info(x_train,y_train,"x_train","y_train")
     _dataset_info(x_test,y_test,"x_test","y_test")
 
 
 data_name=groundtruth2D_data
-X,y=data_loader()
-data_split_save(X,y,data_name)
+#X,y=data_loader()
+data_split_save(data_name)
 
 

@@ -1,6 +1,6 @@
 from importer import Load,Label_count2D
 import matplotlib.pyplot as plt
-from config import classes,groundtruth2D_data
+from config import groundtruth2D_data
 
 x_train=Load(groundtruth2D_data,"x_train")
 y_train=Load(groundtruth2D_data, "y_train")
@@ -12,10 +12,15 @@ def _dataset_info(X,y,X_name,y_name):
     print("{} shape ==> {}".format(y_name,len(y)))
     print("-------------------------------------------")
 
+print(x_train[0])
 print("-------------------------------------")
 _dataset_info(x_train,y_train,"x_train","y_train")
 _dataset_info(x_test,y_test,"x_test","y_test")
 print("-----------------------------------")
-print(X.shape)
-print(y.shape)
+print(y_train[0])
+plt.imshow(x_train[0])
+plt.show()
+
+#print(X.shape)
+#print(y.shape)
 

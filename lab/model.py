@@ -4,7 +4,6 @@ from tensorflow.keras.layers import Conv2D,MaxPooling2D,Dropout,Input
 from tensorflow.keras.layers import Softmax,Flatten,Dense
 from tensorflow.keras import layers
 from tensorflow.keras.applications import MobileNetV2 
-from config import class_number 
 
 def _maxpool2d(y):
     y=MaxPooling2D(pool_size=3,strides=2)(y)
