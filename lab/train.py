@@ -42,8 +42,8 @@ def train(numdata,model_name,epochs):
     test_loss,test_acc=model.evaluate(x_test,y_test,verbose=2)
     f=open("acc.txt","r")
     last_acc=f.readline()
-    print("\n Last Test accuracy:",last_acc)
-    print("\n Current Test accuracy:",test_acc)
+    print("\n Last Mean average error:",last_acc)
+    print("\n Current Mean average error:",test_acc)
     user_input=input("do you want to save this model ? y/n :")
     if user_input=="y":
         f=open("acc.txt","w")

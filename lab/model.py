@@ -52,8 +52,8 @@ def Pilot_net(input_shape):
     #y=Conv2D(filters=96,kernel_size=7,strides=2)(y)
     #y=_fire(y,filters=128,name="fire2")
     #y=_fire(y,filters=128,name="fire3")
-    #y=_fire(y,filters=256,name="fire4")
-    #y=_maxpool2d(y)
+    y=_fire(y,filters=256,name="fire4")
+    y=_maxpool2d(y)
     #y=_fire(y,filters=256,name="fire5")
     #y=_fire(y,filters=384,name="fire6")
     #y=_fire(y,filters=384,name="fire7")
@@ -64,7 +64,7 @@ def Pilot_net(input_shape):
     y=Conv2D(filters=10,kernel_size=1,strides=1)(y)
     y=Flatten()(y)
     y=Dense(64, activation="relu")(y)
-    outputs=Dense(1,activation='sigmoid')(y)
+    outputs=Dense(1,activation='relu')(y)
     model=keras.Model(inputs,outputs,name="Pilot_net")
     return model
 
