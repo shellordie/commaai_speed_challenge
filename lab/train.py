@@ -1,5 +1,6 @@
 from importer import Load
 import tensorflow as tf
+from tensorflow import keras
 from model import Pilot_net 
 from tensorflow.keras.losses import SparseCategoricalCrossentropy
 from config import model_name,groundtruth2D_data 
@@ -32,7 +33,7 @@ def train(numdata,model_name,epochs):
     print("input shape",input_shape)
     model=Pilot_net(input_shape)
     model.compile(optimizer='rmsprop',
-                  loss="mse",
+                  loss=keras.losses.MeanSquaredError(),
                   loss_weights=2.,
                   metrics="mae")
     model=_load_model(model,model_name)

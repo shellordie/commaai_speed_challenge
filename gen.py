@@ -15,7 +15,9 @@ while cap.isOpened():
         path_to_check=r"{}/img{}.png".format(save_path,nbr)
         if os.path.exists(path_to_check)==False:
             print("processing ",path_to_check)
-            plt.imsave(path_to_check,frame)
+            frame=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            img=Image.fromarray(frame)
+            img.save(path_to_check)
             nbr+=1
         else:
             print("exist",path_to_check)

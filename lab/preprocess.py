@@ -49,7 +49,6 @@ def data_loader():
     Save("groundtruth2D",X,"ground_X")
     Save("groundtruth2D",y,"ground_y")
     print("saved in the groundtruth")
-    return X,y
 
 def data_split_save(data_name):
     """ the preprocessor """
@@ -64,8 +63,17 @@ def data_split_save(data_name):
     _dataset_info(x_test,y_test,"x_test","y_test")
 
 
+def label_to_float(data_name):
+    y_train=Load(data_name,"y_train")
+    y_test=Load(data_name,"y_test")
+    y_train=y_train.astype('float32')
+    y_test=y_test.astype('float32')
+    Save(data_name,y_train,"y_train")
+    Save(data_name,y_test,"y_test")
+    
 data_name=groundtruth2D_data
-#X,y=data_loader()
-data_split_save(data_name)
+#data_loader()
+#data_split_save(data_name)
+label_to_float(data_name)
 
 

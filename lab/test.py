@@ -18,11 +18,11 @@ def test(model_name,numdata):
     model.summary()
     x_test=Load(numdata,"x_test")
     y_test=Load(numdata,"y_test")
-    for i in range(0,30): 
+    for i in range(0,10): 
         print("----------------------------------------------")
         print("real speed",y_test[i])
         predictions=model.predict(np.array([x_test[i]]))
-        print("predicted speed",predictions)
+        print("predicted speed",predictions[0])
         plt.imshow(x_test[i])
         plt.show()
 
