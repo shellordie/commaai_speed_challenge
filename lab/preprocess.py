@@ -29,7 +29,7 @@ def _is_groundtruth():
 
 def import_dataset(datapath):
     dataset=Dataset2D(datapath)
-    X,y=dataset.Import(size=(199,199))
+    X,y=dataset.Import(size=(200,200))
     return X,y
 
 def data_loader():
@@ -70,10 +70,10 @@ def label_to_float(data_name):
     y_test=y_test.astype('float32')
     Save(data_name,y_train,"y_train")
     Save(data_name,y_test,"y_test")
+
     
 data_name=groundtruth2D_data
-#data_loader()
-#data_split_save(data_name)
+data_loader()
+data_split_save(data_name)
 label_to_float(data_name)
-
 

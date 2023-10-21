@@ -34,7 +34,6 @@ def train(numdata,model_name,epochs):
     model=Pilot_net(input_shape)
     model.compile(optimizer='rmsprop',
                   loss=keras.losses.MeanSquaredError(),
-                  loss_weights=2.,
                   metrics="mae")
     model=_load_model(model,model_name)
     model.summary()
