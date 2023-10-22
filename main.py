@@ -8,7 +8,7 @@ import tensorflow as tf
 import time
 
 path=r"C:\Users\charleslf\Downloads\Video\test.mp4"
-save_path=r"{}/pred_01.txt".format(os.getcwd())
+save_path=r"{}/pred.txt".format(os.getcwd())
 
 def _load_model(model_name):
     current_dir=os.getcwd()
@@ -19,13 +19,13 @@ def _load_model(model_name):
         return model
 
 def _gen_pred():
-    model=_load_model("speed_model_002")
+    model=_load_model("speed_model_003")
     print("model loaded")
     cap=cv2.VideoCapture(path)
     while cap.isOpened():
         ret,frame=cap.read()
         if ret ==True:
-            frame_2_pred = cv2.resize(frame, (199,199))
+            frame_2_pred = cv2.resize(frame, (200,200))
             predictions=model.predict(np.array([frame_2_pred]))
             f=open(save_path,"a")
             f.write(str(predictions[0][0]))
