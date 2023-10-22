@@ -29,7 +29,7 @@ def _is_groundtruth():
 
 def import_dataset(datapath):
     dataset=Dataset2D(datapath)
-    X,y=dataset.Import(size=(200,200))
+    X,y=dataset.Import(size=(199,199))
     return X,y
 
 def data_loader():

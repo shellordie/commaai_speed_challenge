@@ -44,6 +44,10 @@ data_aug=tf.keras.Sequential([
     layers.RandomFlip("horizontal"),
     layers.RandomRotation(0.2),
     layers.RandomRotation(0.4),
+    layers.RandomRotation(0.6),
+    layers.RandomFlip("horizontal_and_vertical"),
+    layers.RandomFlip("vertical"),
+    layers.RandomFlip("horizontal"),
     layers.Resizing(224,224),
     layers.Rescaling(1./255),
     ])
@@ -52,6 +56,7 @@ def data_aug2(y):
     y=tf.image.flip_left_right(y)
     y=tf.image.adjust_brightness(y,delta=0.1)
     y=tf.image.central_crop(y,central_fraction=0.5)
+    y=tf.image.adjust_brightness(y,delta=0.2)
     return y
 
 base_model=MobileNetV2(include_top=False)
