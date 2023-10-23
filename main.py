@@ -2,9 +2,8 @@ import cv2
 import os
 from PIL import Image
 import numpy as np
-import time
+
 def _play_video():
-    time.sleep(10)
     video_path=r"C:\Users\charleslf\Downloads\Video\test.mp4"
     save_path=r"{}/pred.txt".format(os.getcwd())
     nbr=0
