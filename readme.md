@@ -1,6 +1,6 @@
 ## Comma.ai speed challenge
 
-[](https://github.com/commaai/speedchallenge)
+[comma.ai speed challenge repo](https://github.com/commaai/speedchallenge)
 
 ## Model performance on Test set
 
@@ -35,6 +35,8 @@ py main.py
 ```
 
 ### Gif of the Test Video
+
+[speed_gif](rsc/speed_gif.gif)
 
 ### Full Test Video
 
