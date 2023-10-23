@@ -48,5 +48,5 @@ py main.py
 
 ### Test Video Full
 
-![speed_full](https://youtu.be/0tydJ_nv43M)
+[view on youtube](https://youtu.be/0tydJ_nv43M)
 
