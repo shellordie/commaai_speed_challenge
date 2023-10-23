@@ -1,4 +1,4 @@
-## Comma.ai speed challenge
+# Comma.ai speed challenge
 
 [comma.ai speed challenge repo](https://github.com/commaai/speedchallenge)
 
@@ -36,7 +36,7 @@ py main.py
 
 ### Gif of the Test Video
 
-[speed_gif](rsc/speed_gif.gif)
+![speed_gif](rsc/speed_gif.gif)
 
 ### Full Test Video
 
