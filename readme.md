@@ -24,21 +24,29 @@ https://github.com/shellordie/commaai_speed_challenge
 ```
 pip install -r requirements.txt
 ```
-### Step 3 : Download the test video from comma.ai speedchallenge repo 
+### Step 3 : Download the test video 
 
-### Step 4 : Modify the ***video_path*** in the ***main.py*** file to point to the test video you just download
+```
+Download the test video from comma.ai speedchallenge repo 
+```
 
-### run the main.py
+### Step 4 : Modify the ***video_path*** 
+
+```
+Modify the ***video_path*** in the ***main.py*** file to point to the test video you just download
+```
+
+### Step 5 : Run the main.py
 
 ```
 py main.py
 ```
 
-### Gif of the Test Video
+### Test Video sample
 
 ![speed_gif](rsc/speed_gif.gif)
 
-### Full Test Video
+### Test Video Full
 
 
 
