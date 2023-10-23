@@ -4,12 +4,12 @@ from PIL import Image
 import numpy as np
 
 def _play_video():
-    path=r"C:\Users\charleslf\Downloads\Video\test.mp4"
+    video_path=r"C:\Users\charleslf\Downloads\Video\test.mp4"
     save_path=r"{}/pred.txt".format(os.getcwd())
     nbr=0
     f=open(save_path,"r")
     lines=f.readlines()
-    cap=cv2.VideoCapture(path)
+    cap=cv2.VideoCapture(video_path)
     while cap.isOpened():
         ret,frame=cap.read()
         if ret ==True:
