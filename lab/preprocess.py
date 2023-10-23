@@ -29,7 +29,7 @@ def _is_groundtruth():
 
 def import_dataset(datapath):
     dataset=Dataset2D(datapath)
-    X,y=dataset.Import(size=(199,199))
+    X,y=dataset.Import(size=(200,200))
     return X,y
 
 def data_loader():
@@ -54,7 +54,7 @@ def data_split_save(data_name):
     """ the preprocessor """
     ground_x=Load("groundtruth2D","ground_X")
     ground_y=Load("groundtruth2D","ground_y")
-    x_train,x_test,y_train,y_test=Split2D(ground_x,ground_y)
+    x_train,x_test,y_train,y_test=Split2D(ground_x,ground_y,test_size=0.1)
     #x_train=Normalize2D(x_train)
     #x_test=Normalize2D(x_test)
     _save(data_name,x_train,x_test,y_train,y_test)
