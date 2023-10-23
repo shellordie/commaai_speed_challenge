@@ -59,5 +59,5 @@ def train(numdata,model_name,epochs):
 print("Num GPU availaible :",len(tf.config.list_physical_devices('GPU')))
 numdata=groundtruth2D_data
 model_name=model_name
-train(numdata,model_name,epochs=1)
+train(numdata,model_name,epochs=3)
 
