@@ -19,7 +19,7 @@ def _load_model(model_name):
         return model
 
 def _gen_pred():
-    model=_load_model("speed_model_003")
+    model=_load_model("speed_model_004")
     print("model loaded")
     cap=cv2.VideoCapture(path)
     while cap.isOpened():
